@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_panel";
+}
+
+<div class="row">
+    <div class="col-md-6 col-xl-6">
+        <a asp-controller="ProductCategories" asp-action="Index" style="text-decoration:none;">
+            <div class="card mb-3 widget-content bg-midnight-bloom">
+                <div class="widget-content-wrapper text-white" style="height:250px;">
+                    <div class="center">
+                        <center>
+                            <div class="widget-numbers text-white">Ürün Kategori İşlemleri</div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!--Ürün İşlemleri-->
+    <div class="col-md-6 col-xl-6">
+        <a asp-controller="tblProducts" asp-action="Index" style="text-decoration:none;">
+            <div class="card mb-3 widget-content bg-midnight-bloom">
+                <div class="widget-content-wrapper text-white" style="height:250px;">
+                    <div class="center">
+                        <center>
+                            <div class="widget-numbers text-white">Ürün İşlemleri</div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!--Vizyon-->
+    <div class="col-md-6 col-xl-6">
+        <a asp-controller="tblVizyons" asp-action="Index" style="text-decoration:none;">
+            <div class="card mb-3 widget-content bg-midnight-bloom">
+                <div class="widget-content-wrapper text-white" style="height:250px;">
+                    <div class="center">
+                        <center>
+                            <div class="widget-numbers text-white">Vizyonumuz</div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!--Misyon-->
+    <div class="col-md-6 col-xl-6">
+        <a asp-controller="tblMisyons" asp-action="Index" style="text-decoration:none;">
+            <div class="card mb-3 widget-content bg-midnight-bloom">
+                <div class="widget-content-wrapper text-white" style="height:250px;">
+                    <div class="center">
+                        <center>
+                            <div class="widget-numbers text-white">Misyonumuz</div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

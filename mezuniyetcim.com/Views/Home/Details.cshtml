@@ -1,0 +1,54 @@
+﻿@model mezuniyetcim.com.Entities.tblProduct
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<main id="main">
+
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Ürünlerimiz Hakkında Detaylı Bilgi</h2>
+                <ol>
+                    <li><a asp-controller="Home" asp-action="Index">Anasayfa</a></li>
+                    <li>@Model.ProductName Ürün Detayları</li>
+                </ol>
+            </div>
+
+        </div>
+    </section>
+    <section class="portfolio-details">
+        <div class="container">
+
+            <div class="portfolio-details-container">
+
+                <div class="owl-carousel portfolio-details-carousel">
+                    @foreach (var item in Model.productImages)
+                    {
+                        <img src="/Images/@item.fileName" alt="Alternate Text" />
+                    }
+                </div>
+
+                <div class="portfolio-info">
+                    <h3>Project information</h3>
+                    <ul>
+                        <li><strong>Ürün Adı</strong>: @Model.ProductName</li>
+                        <li><strong>Kategori</strong>: @Model.productCategory.productCategoryName</li>
+                        <li><strong>Kiralama Ücreti</strong>: @Model.ProductPrice ₺</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="portfolio-description">
+                <h2>Ürün Hakkında Bazı Bilgiler</h2>
+                    <p>@Model.ProductDescription</p>
+            </div>
+        </div>
+    </section>
+
+</main>

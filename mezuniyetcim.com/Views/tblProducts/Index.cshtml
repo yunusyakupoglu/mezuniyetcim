@@ -1,0 +1,56 @@
+﻿@model IEnumerable<mezuniyetcim.com.Entities.tblProduct>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_panel.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Resim
+            </th>
+            <th>
+                Ürün Adı
+            </th>
+            <th>
+                Ücret
+            </th>
+            <th>
+                Kategori
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                <img src="/Images/@item.productImages.FirstOrDefault()?.fileName" style="max-height:50px;" alt="Alternate Text" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPrice) ₺
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.productCategory.productCategoryName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ProductID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProductID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

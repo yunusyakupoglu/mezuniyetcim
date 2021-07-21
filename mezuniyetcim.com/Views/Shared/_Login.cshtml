@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Login/assets/css/style.css">
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/Login/assets/js/jquery.min.js"></script>
+    <script src="~/Login/assets/js/popper.js"></script>
+    <script src="~/Login/assets/js/bootstrap.min.js"></script>
+    <script src="~/Login/assets/js/main.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
