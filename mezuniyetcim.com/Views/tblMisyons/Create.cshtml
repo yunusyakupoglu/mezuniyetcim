@@ -2,36 +2,39 @@
 
 @{
     ViewData["Title"] = "Create";
-    Layout = "~/Views/Shared/_panel.cshtml";
+    Layout = "~/Views/Shared/_admin.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>tblMisyon</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="misyonTitle" class="control-label"></label>
-                <input asp-for="misyonTitle" class="form-control" />
-                <span asp-validation-for="misyonTitle" class="text-danger"></span>
+<section class="forms">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Misyon Ekle</h2>
+                <hr />
+                <form id="contact" asp-action="Create" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <fieldset>
+                                <input asp-for="misyonTitle" type="text" class="form-control" id="name" placeholder="Misyon Başlığı" required="">
+                            </fieldset>
+                            <fieldset>
+                                <input asp-for="misyonDescription" type="text" class="form-control" id="name" placeholder="Misyon" required="">
+                            </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="filled-rectangle-button">
+                                <button type="submit" value="Create">Oluştur</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="misyonDescription" class="control-label"></label>
-                <input asp-for="misyonDescription" class="form-control" />
-                <span asp-validation-for="misyonDescription" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
+</section>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Tüm Misyonlar</a>
 </div>
 
 @section Scripts {

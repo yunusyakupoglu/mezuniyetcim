@@ -1,0 +1,39 @@
+﻿@model mezuniyetcim.com.Entities.tblMail
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<section class="forms">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Mail Adresi Ekle</h2>
+                <hr />
+                <form id="contact" asp-action="Create" method="post">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <fieldset>
+                                <input asp-for="mail" type="text" class="form-control" id="name" placeholder="Mail Adresi" required="">
+                            </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="filled-rectangle-button">
+                                <button type="submit" value="Create">Oluştur</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

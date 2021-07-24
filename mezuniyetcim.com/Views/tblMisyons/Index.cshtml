@@ -2,41 +2,48 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_panel.cshtml";
+    Layout = "~/Views/Shared/_admin.cshtml";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.misyonTitle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.misyonDescription)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.misyonTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.misyonDescription)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.misyonId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.misyonId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.misyonId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="col-md-6 col-sm-12">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="filled-rectangle-button">
+                <a asp-action="Create">Misyon Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="alternate-table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Misyon Başlığı
+                </th>
+                <th>
+                    Misyon Açıklaması
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.misyonTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.misyonDescription)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.misyonId">Düzenle</a> |
+                        <a asp-action="Details" asp-route-id="@item.misyonId">Detaylar</a> |
+                        <a asp-action="Delete" asp-route-id="@item.misyonId">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<mezuniyetcim.com.Entities.Events>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<div class="col-md-6 col-sm-12">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="filled-rectangle-button">
+                <a asp-action="Create">Anımsatıcı Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="alternate-table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Başlık
+                </th>
+                <th>
+                    Başlangıç
+                </th>
+                <th>
+                    Bitiş
+                </th>
+                <th>
+                    Renk
+                </th>
+                <th>
+                    Yazı Rengi
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.start)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.end)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.color)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.textColor)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.id">Düzenle</a> |
+                        <a asp-action="Details" asp-route-id="@item.id">Detaylar</a> |
+                        <a asp-action="Delete" asp-route-id="@item.id">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

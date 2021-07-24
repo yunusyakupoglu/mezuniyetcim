@@ -13,5 +13,8 @@ namespace mezuniyetcim.com.Models
         public List<tblProductImage> productImages { get; set; }
         public List<tblVizyon> vizyons { get; set; }
         public List<tblMisyon> misyons { get; set; }
+        public List<tblAddress> addresses { get; set; }
+        public List<tblPhone> phones { get; set; }
+        public List<tblMail> mails { get; set; }
     }
 }

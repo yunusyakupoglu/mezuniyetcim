@@ -1,0 +1,43 @@
+﻿@model IEnumerable<mezuniyetcim.com.Entities.tblPhone>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<div class="col-md-8 col-sm-12">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="filled-rectangle-button">
+                <a asp-action="Create">Telefon Numarası Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="alternate-table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Telefon Numarası
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.phoneNumber)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.phoneId">Düzenle</a> |
+                        <a asp-action="Details" asp-route-id="@item.phoneId">Detaylar</a> |
+                        <a asp-action="Delete" asp-route-id="@item.phoneId">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>

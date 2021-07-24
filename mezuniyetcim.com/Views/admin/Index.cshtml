@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<!-- Services -->
+<section class="services">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="service-item first-item">
+                    <div class="icon"></div>
+                    <h4>Ürün Kategori</h4>
+                    <p><a rel="nofollow" asp-controller="ProductCategories" asp-action="Index">Ekle | Sil | Güncelle | Listele</a></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-item second-item">
+                    <div class="icon"></div>
+                    <h4>Ürün</h4>
+                    <p><a rel="nofollow" asp-controller="tblProducts" asp-action="Index">Ekle | Sil | Güncelle | Listele</a></p>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-item third-item">
+                    <div class="icon"></div>
+                    <h4>İletişim</h4>
+                    <p><a rel="nofollow" asp-controller="tblPhones" asp-action="Index">Telefon</a> | <a rel="nofollow" asp-controller="tblMails" asp-action="Index">Mail</a> | <a rel="nofollow" asp-controller="tblAddresses" asp-action="Index">Adres</a></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-item fourth-item">
+                    <div class="icon"></div>
+                    <h4>Vizyonumuz</h4>
+                    <p><a rel="nofollow" asp-controller="tblVizyons" asp-action="Index">Ekle | Sil | Güncelle | Listele</a></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-item fivth-item">
+                    <div class="icon"></div>
+                    <h4>Misyonumuz</h4>
+                    <p><a rel="nofollow" asp-controller="tblMisyons" asp-action="Index">Ekle | Sil | Güncelle | Listele</a></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-item sixth-item">
+                    <div class="icon"></div>
+                    <h4>Anımsatıcı</h4>
+                    <p><a rel="nofollow" asp-controller="Events" asp-action="Index">Ekle | Sil | Güncelle | Listele</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

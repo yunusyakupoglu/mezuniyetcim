@@ -1,0 +1,27 @@
+﻿@model mezuniyetcim.com.Entities.tblMail
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h1>Mail Adresi Sil</h1>
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.mail)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.mail)
+    </dd>
+</dl>
+
+<form id="contact" asp-action="Delete">
+    <input type="hidden" asp-for="mailId" />
+    <div class="col-md-12">
+        <div class="filled-rectangle-button">
+            <button type="submit" value="Delete">Sil</button>
+        </div>
+    </div>
+    <a asp-action="Index">Tüm Mail Adresleri</a>
+</form>

@@ -1,0 +1,55 @@
+﻿@model mezuniyetcim.com.Entities.tblAddress
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h1>Adres Sil</h1>
+<dl class="row">
+    <dt class="col-sm-12">
+        Şehir
+    </dt>
+    <dd class="col-sm-12">
+        @Html.DisplayFor(model => model.Sehir)
+    </dd>
+    <dt class="col-sm-12">
+        İlçe
+    </dt>
+    <dd class="col-sm-12">
+        @Html.DisplayFor(model => model.İlce)
+    </dd>
+    <dt class="col-sm-12">
+        Mahalle
+    </dt>
+    <dd class="col-sm-12">
+        @Html.DisplayFor(model => model.Mahalle)
+    </dd>
+    <dt class="col-sm-12">
+        Cadde
+    </dt>
+    <dd class="col-sm-12">
+        @Html.DisplayFor(model => model.Cadde)
+    </dd>
+    <dt class="col-sm-12">
+        Sokak
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Sokak)
+    </dd>
+    <dt class="col-sm-12">
+        adresTanımı
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.adresTanımı)
+    </dd>
+</dl>
+<form id="contact" asp-action="Delete">
+    <input type="hidden" asp-for="adresId" />
+    <div class="col-md-12">
+        <div class="filled-rectangle-button">
+            <button type="submit" value="Delete">Sil</button>
+        </div>
+    </div>
+    <a asp-action="Index">Tüm Adresler</a>
+</form>

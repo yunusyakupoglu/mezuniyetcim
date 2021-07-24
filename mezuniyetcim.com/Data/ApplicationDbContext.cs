@@ -19,6 +19,10 @@ namespace mezuniyetcim.com.Data
         public DbSet<tblProductImage> productImages { get; set; }
         public DbSet<tblVizyon> vizyons { get; set; }
         public DbSet<tblMisyon> misyons { get; set; }
+        public DbSet<tblAddress> addresses { get; set; }
+        public DbSet<tblPhone> phones { get; set; }
+        public DbSet<tblMail> mails { get; set; }
+        public DbSet<Events> events { get; set; }
 
     }
 }

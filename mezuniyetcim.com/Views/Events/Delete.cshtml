@@ -1,0 +1,52 @@
+﻿@model mezuniyetcim.com.Entities.Events
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h1>Anımsatıcı Sil</h1>
+
+
+    <dl class="row">
+        <dt class = "col-sm-12">
+            Başlık
+        </dt>
+        <dd class = "col-sm-12">
+            @Html.DisplayFor(model => model.title)
+        </dd>
+        <dt class = "col-sm-12">
+            Başlangıç
+        </dt>
+        <dd class = "col-sm-12">
+            @Html.DisplayFor(model => model.start)
+        </dd>
+        <dt class = "col-sm-12">
+            Bitiş
+        </dt>
+        <dd class = "col-sm-12">
+            @Html.DisplayFor(model => model.end)
+        </dd>
+        <dt class = "col-sm-12">
+            Arkaplan Rengi
+        </dt>
+        <dd class = "col-sm-12">
+            @Html.DisplayFor(model => model.color)
+        </dd>
+        <dt class = "col-sm-12">
+            Yazı Rengi
+        </dt>
+        <dd class = "col-sm-12">
+            @Html.DisplayFor(model => model.textColor)
+        </dd>
+    </dl>
+    
+    <form id="contact" asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <div class="col-md-12">
+            <div class="filled-rectangle-button">
+                <button type="submit" value="Delete">Sil</button>
+            </div>
+        </div>
+        <a asp-action="Index">Tüm Anımsatıcılar</a>
+    </form>

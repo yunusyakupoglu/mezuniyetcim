@@ -1,0 +1,47 @@
+﻿@model mezuniyetcim.com.Entities.Events
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h1>Anımsatıcı Detayları</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-12">
+            Başlık
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.title)
+        </dd>
+        <dt class="col-sm-12">
+            Başlangıç
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.start)
+        </dd>
+        <dt class="col-sm-12">
+            Bitiş
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.end)
+        </dd>
+        <dt class="col-sm-12">
+            Arkaplan Rengi
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.color)
+        </dd>
+        <dt class="col-sm-12">
+            Yazı Rengi
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.textColor)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Düzenle</a> |
+    <a asp-action="Index">Tüm Anımsatıcılar</a>
+</div>

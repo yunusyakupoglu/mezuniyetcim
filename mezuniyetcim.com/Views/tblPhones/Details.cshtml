@@ -1,0 +1,23 @@
+﻿@model mezuniyetcim.com.Entities.tblPhone
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h1>Telefon Numarası Detayları</h1>
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-12">
+            Telefon Numarası
+        </dt>
+        <dd class = "col-sm-12">
+            @Html.DisplayFor(model => model.phoneNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.phoneId">Düzenle</a> |
+    <a asp-action="Index">Tüm Telefon Numaraları</a>
+</div>

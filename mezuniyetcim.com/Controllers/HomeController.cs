@@ -30,6 +30,9 @@ namespace mezuniyetcim.com.Controllers
             home.productImages = _context.productImages.ToList();
             home.vizyons = _context.vizyons.ToList();
             home.misyons = _context.misyons.ToList();
+            home.addresses = _context.addresses.ToList();
+            home.phones = _context.phones.ToList();
+            home.mails = _context.mails.ToList();
             return View(home);
         }
 

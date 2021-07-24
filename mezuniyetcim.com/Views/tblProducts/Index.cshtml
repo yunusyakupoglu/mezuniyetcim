@@ -2,55 +2,63 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_panel.cshtml";
+    Layout = "~/Views/Shared/_admin.cshtml";
 }
 
-<h1>Index</h1>
+<div class="col-md-6 col-sm-12">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="filled-rectangle-button">
+                <a asp-action="Create">Ürün Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="alternate-table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Kategori
+                </th>
+                @*<th>
+            Resim
+        </th>*@
+                <th>
+                    Ürün Adı
+                </th>
+                <th>
+                    Ücret
+                </th>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Resim
-            </th>
-            <th>
-                Ürün Adı
-            </th>
-            <th>
-                Ücret
-            </th>
-            <th>
-                Kategori
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>
-                <img src="/Images/@item.productImages.FirstOrDefault()?.fileName" style="max-height:50px;" alt="Alternate Text" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductPrice) ₺
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.productCategory.productCategoryName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductID">Delete</a>
-            </td>
-        </tr>
-        }
-    </tbody>
-</table>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.productCategory.productCategoryName)
+                </td>
+                @*<td>
+            <img src="/Images/@item.productImages.FirstOrDefault()?.fileName" style="max-height:20px; " alt="Alternate Text" />
+        </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductPrice) ₺
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProductID">Düzenle</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProductID">Detaylar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProductID">Sil</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    </div>
 

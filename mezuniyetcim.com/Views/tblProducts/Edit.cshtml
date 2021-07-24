@@ -2,47 +2,47 @@
 
 @{
     ViewData["Title"] = "Edit";
-    Layout = "~/Views/Shared/_panel.cshtml";
+    Layout = "~/Views/Shared/_admin.cshtml";
 }
 
-<h1>Edit</h1>
-
-<h4>tblProduct</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ProductID" />
-            <div class="form-group">
-                <label asp-for="ProductName" class="control-label"></label>
-                <input asp-for="ProductName" class="form-control" />
-                <span asp-validation-for="ProductName" class="text-danger"></span>
+<section class="forms">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Ürün Düzenle</h2>
+                <hr />
+                <form id="contact" asp-action="Edit">
+                    <div class="row">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="ProductID" />
+                        <div class="col-md-12">
+                            <fieldset>
+                                <input asp-for="ProductName" type="text" class="form-control" id="name" placeholder="Kategori Adı..." required="">
+                            </fieldset>
+                            <fieldset>
+                                <input asp-for="ProductPrice" type="text" class="form-control" id="name" placeholder="Kategori Adı..." required="">
+                            </fieldset>
+                            <fieldset>
+                                <input asp-for="ProductDescription" type="text" class="form-control" id="name" placeholder="Kategori Adı..." required="">
+                            </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                            @Html.DropDownListFor(model => model.productCategoryID, ViewBag.categoryView as SelectList, "-- Lütfen Kategorinizi Seçiniz --", new { @class = "form-control ", @id = "category", @placeholder = "Kategorinizi Seçiniz", required = "required" })
+                            <span asp-validation-for="productCategoryID" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="filled-rectangle-button">
+                                <button type="submit" value="Save">Kaydet</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="ProductPrice" class="control-label"></label>
-                <input asp-for="ProductPrice" class="form-control" />
-                <span asp-validation-for="ProductPrice" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductDescription" class="control-label"></label>
-                <input asp-for="ProductDescription" class="form-control" />
-                <span asp-validation-for="ProductDescription" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="productCategoryID" class="control-label"></label>
-                @Html.DropDownListFor(model => model.productCategoryID, ViewBag.categoryView as SelectList, "-- Lütfen Kategorinizi Seçiniz --", new { @class = "form-control ", @placeholder = "Kategorinizi Seçiniz", required = "required" })
-                <span asp-validation-for="productCategoryID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-
+</section>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Tüm Ürünler</a>
 </div>
 
 @section Scripts {

@@ -1,0 +1,58 @@
+﻿@model mezuniyetcim.com.Entities.tblAddress
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+
+<section class="forms">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Adres Ekle</h2>
+                <hr />
+                <form id="contact" asp-action="Create" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <fieldset>
+                                <input asp-for="Sehir" type="text" class="form-control" placeholder="Şehir" required="">
+                            </fieldset>
+                            <fieldset>
+                                <input asp-for="İlce" type="text" class="form-control" id="name" placeholder="İlçe" required="">
+                            </fieldset>
+                            <fieldset>
+                                <input asp-for="Mahalle" type="text" class="form-control" id="name" placeholder="Mahalle" required="">
+                            </fieldset>
+                        </div>
+                        <div class="col-md-6">
+                            <fieldset>
+                                <input asp-for="Cadde" type="text" class="form-control" id="name" placeholder="Cadde" required="">
+                            </fieldset>
+                            <fieldset>
+                                <input asp-for="Sokak" type="text" class="form-control" id="name" placeholder="Sokak" required="">
+                            </fieldset>
+                            <fieldset>
+                                <input asp-for="adresTanımı" type="text" class="form-control" id="name" placeholder="Adres Tanımı" required="">
+                            </fieldset>
+                        </div>
+                       
+                        <div class="col-md-12">
+                            <div class="filled-rectangle-button">
+                                <button type="submit" value="Create">Oluştur</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div>
+    <a asp-action="Index">Tüm Adresler</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

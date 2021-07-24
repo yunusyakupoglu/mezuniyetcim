@@ -1,0 +1,28 @@
+﻿@model mezuniyetcim.com.Entities.tblPhone
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h1>Telefon Numarası Sil</h1>
+
+<dl class="row">
+    <dt class="col-sm-12">
+        Telefon Numarası:
+    </dt>
+    <dd class="col-sm-12">
+        @Html.DisplayFor(model => model.phoneNumber)
+    </dd>
+</dl>
+
+<form id="contact" asp-action="Delete">
+    <input type="hidden" asp-for="phoneId" />
+    <div class="col-md-12">
+        <div class="filled-rectangle-button">
+            <button type="submit" value="Delete">Sil</button>
+        </div>
+    </div>
+    <a asp-action="Index">Tüm Telefon Numaraları</a>
+</form>
+

@@ -219,6 +219,78 @@ namespace mezuniyetcim.com.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("mezuniyetcim.com.Entities.Events", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("color")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("end")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("start")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("textColor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("events");
+                });
+
+            modelBuilder.Entity("mezuniyetcim.com.Entities.tblAddress", b =>
+                {
+                    b.Property<int>("adresId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Cadde")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Mahalle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sehir")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sokak")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("adresTanımı")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("İlce")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("adresId");
+
+                    b.ToTable("addresses");
+                });
+
+            modelBuilder.Entity("mezuniyetcim.com.Entities.tblMail", b =>
+                {
+                    b.Property<int>("mailId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("mail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("mailId");
+
+                    b.ToTable("mails");
+                });
+
             modelBuilder.Entity("mezuniyetcim.com.Entities.tblMisyon", b =>
                 {
                     b.Property<int>("misyonId")
@@ -235,6 +307,21 @@ namespace mezuniyetcim.com.Data.Migrations
                     b.HasKey("misyonId");
 
                     b.ToTable("misyons");
+                });
+
+            modelBuilder.Entity("mezuniyetcim.com.Entities.tblPhone", b =>
+                {
+                    b.Property<int>("phoneId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("phoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("phoneId");
+
+                    b.ToTable("phones");
                 });
 
             modelBuilder.Entity("mezuniyetcim.com.Entities.tblProduct", b =>
